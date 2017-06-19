@@ -1,0 +1,7 @@
+[package]
+name = "hill-gen-queens"
+version = "0.1.0"
+authors = ["Hossein Noroozpour <hossein.noroozpour@gmail.com>"]
+
+[dependencies]
+clap = "*"
