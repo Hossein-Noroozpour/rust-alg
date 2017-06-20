@@ -5,3 +5,4 @@ authors = ["Hossein Noroozpour <hossein.noroozpour@gmail.com>"]
 
 [dependencies]
 clap = "*"
+rand = "*"
