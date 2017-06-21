@@ -4,7 +4,6 @@ use std::cmp::{Ord, Ordering, PartialOrd, PartialEq, Eq};
 use self::rand::distributions::{IndependentSample, Range};
 use self::rand::ThreadRng;
 
-#[derive(Clone)]
 struct AlgInfo {
     pub squars:        i32,
     pub rng:           ThreadRng,
@@ -128,10 +127,10 @@ pub fn execute(squars: i32) {
     let mut rng = rand::thread_rng();
     let sqr_rng = Range::new(0i32, squars);
     let mut_prob_rng = Range::new(0.025f64, 0.0375);
-    let pop_num_rng = Range::new(750usize, 1250);
+    let pop_num_rng = Range::new(75usize, 125);
     let mutation_prob = mut_prob_rng.ind_sample(&mut rng);
     let population_number = pop_num_rng.ind_sample(&mut rng);
-    let termination_loop = 1000i32;
+    let termination_loop = 100i32;
     let mut alg_info = AlgInfo {
         squars:        squars,
         rng:           rng,
@@ -150,7 +149,6 @@ pub fn execute(squars: i32) {
             break;
         }
         population = population[0..population_number].to_vec();
-        // population = population[pop_len - population_number..pop_len].to_vec();
         let mut new_generation = Vec::new();
         let population_number = population_number - 1;
         for i in 0..population_number {
