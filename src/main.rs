@@ -40,7 +40,7 @@ fn main() {
     let squars: i32 = matches.value_of(SQUARS_NUMBER_NAME).unwrap_or("8").parse().unwrap_or(8);
     if let Some(matches) = matches.subcommand_matches(HILL_NAME) {
         let tepm_rate: f64 = matches.value_of(TEMP_REDUCTION_NAME)
-            .unwrap_or("0.5").parse().unwrap_or(0.5f64);
+            .unwrap_or("0.9999990").parse().unwrap_or(0.999f64);
         hillclimbing::execute(squars as u64, squars as u64, tepm_rate);
     } else if let Some(matches) = matches.subcommand_matches(GENETIC_NAME) {
         let wise_genetic: bool = matches.value_of(WISE_NAME)
